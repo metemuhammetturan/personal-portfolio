@@ -114,6 +114,7 @@ body.light-theme .hero-content p {
     color: var(--primary-color);
 }
 
+/* Buton Düzeni */
 .buttons {
     display: flex;
     justify-content: center;
