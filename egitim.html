@@ -4,76 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mete Muhammet Turan - Eğitim</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar container">
-            <div class="logo">M.Turan</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="egitim.html" style="color: var(--primary-color);">Eğitim & Yetkinlikler</a></li>
-                <li><a href="projeler.html">İş Geçmişi</a></li>
-                <li><a href="iletisim.html">İletişim</a></li>
-                <li><button id="theme-toggle" class="theme-toggle" aria-label="Tema Değiştir">🌙</button></li>
-            </ul>
-        </nav>
+    
+    <header class="navbar">
+        <div class="logo">M.Turan</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="egitim.html" class="active">Eğitim & Deneyim</a></li>
+            <li><a href="projeler.html">Projeler & Yetkinlikler</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+            <li><button id="theme-toggle" aria-label="Tema Değiştir">🌙</button></li>
+        </ul>
     </header>
 
-    <main style="min-height: calc(100vh - 160px); display: flex; align-items: center;">
-        <section class="section layout-split reveal" style="width: 100%; border: none; background-color: transparent;">
-            <div class="container split-container">
-                <div class="split-column education-timeline">
-                    <h3 class="section-title">Eğitim & Deneyim</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-date">2025 - Devam Ediyor</div>
-                            <h4>Co-Founder & Backend Dev.</h4>
-                            <span class="timeline-company">Buyur.co</span>
-                            <p>Yapay zeka tabanlı çağrı sistemleri için ölçeklenebilir backend mimarisi tasarımı ve teknik ekip yönetimi.</p>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">2024 - Devam Ediyor</div>
-                            <h4>Founder & Fullstack Developer</h4>
-                            <span class="timeline-company">Yoldayım</span>
-                            <p>Öğrenci taşımacılık sistemini dijitalleştiren platformun Flutter ve Node.js mimarisiyle uçtan uca geliştirilmesi.</p>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">2023 - 2027</div>
-                            <h4>Yazılım Mühendisliği (Lisans)</h4>
-                            <span class="timeline-company">Karabük Üniversitesi</span>
-                            <p>Yazılım algoritmaları, veri yapıları ve modern mühendislik pratikleri üzerine akademik eğitim.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="split-column skills-container">
-                    <h3 class="section-title">Teknolojiler</h3>
-                    <div class="skills-flex">
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Nest.js</span>
-                        <span class="skill-tag">Flutter</span>
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">Redis</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">REST API</span>
-                        <span class="skill-tag">Git / GitHub</span>
-                        <span class="skill-tag">Figma</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <main class="container">
+        <h2 class="title">Eğitim & Deneyim</h2>
+        
+        <div class="content-box">
+            <span class="date">2023 - 2027</span>
+            <h3>Karabük Üniversitesi</h3>
+            <p>Yazılım Mühendisliği (Lisans Eğitimi)</p>
+        </div>
+
+        <div class="content-box">
+            <span class="date">2025 - Devam Ediyor</span>
+            <h3>Buyur.co</h3>
+            <p>Co-Founder & Backend Developer (Yapay Zeka Tabanlı Çağrı Sistemi)</p>
+        </div>
+
+        <div class="content-box">
+            <span class="date">2024 - Devam Ediyor</span>
+            <h3>Yoldayım</h3>
+            <p>Founder & Fullstack Developer (Öğrenci Taşımacılık Platformu)</p>
+        </div>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Mete Muhammet Turan. Tüm hakları saklıdır.</p>
-            <p class="footer-subtext">Bu portfolyo İnternet Tabanlı Programlama dersi projesi kapsamında geliştirilmiştir.</p>
-        </div>
+        <p>&copy; 2026 Mete Muhammet Turan. Bu portfolyo İnternet Tabanlı Programlama dersi kapsamında geliştirilmiştir.</p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

@@ -4,47 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mete Muhammet Turan - Ana Sayfa</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Temiz ve Modern Poppins Fontu -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar container">
-            <div class="logo">M.Turan</div>
-            <ul class="nav-links">
-                <li><a href="index.html" style="color: var(--primary-color);">Ana Sayfa</a></li>
-                <li><a href="egitim.html">Eğitim & Yetkinlikler</a></li>
-                <li><a href="projeler.html">İş Geçmişi</a></li>
-                <li><a href="iletisim.html">İletişim</a></li>
-                <li><button id="theme-toggle" class="theme-toggle" aria-label="Tema Değiştir">🌙</button></li>
-            </ul>
-        </nav>
+    
+    <!-- Navbar (Üst Menü) -->
+    <header class="navbar">
+        <div class="logo">M.Turan</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Ana Sayfa</a></li>
+            <li><a href="egitim.html">Eğitim & Deneyim</a></li>
+            <li><a href="projeler.html">Projeler & Yetkinlikler</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+            <li><button id="theme-toggle" aria-label="Tema Değiştir">🌙</button></li>
+        </ul>
     </header>
 
-    <main>
-        <section class="hero-section layout-hero reveal">
-            <div class="container hero-content">
-                <span class="greeting">Merhaba, Ben</span>
-                <h1 class="gradient-text">Mete Muhammet Turan</h1>
-                <!-- Daktilo efekti için değiştirilen alan -->
-                <h2><span class="typewriter"></span><span class="cursor"></span></h2>
-                <p>Yazılım mühendisliği disiplini ile girişimci bakış açısını sentezleyerek, gerçek dünya problemlerine ölçeklenebilir dijital çözümler üretiyorum. Sistem mimarisi, yapay zeka entegrasyonları ve uçtan uca ürün yönetimi konularında uzmanım.</p>
-                <div class="hero-actions">
-                    <a href="projeler.html" class="btn btn-primary">İş Geçmişimi Gör</a>
-                    <a href="iletisim.html" class="btn btn-outline">İletişime Geç</a>
-                </div>
+    <!-- Ana Karşılama Alanı (Hero) -->
+    <main class="hero">
+        <div class="hero-content">
+            <h1>Merhaba, Ben <span class="highlight">Mete Muhammet Turan</span></h1>
+            <p>Karabük Üniversitesi Yazılım Mühendisliği bölümü öğrencisiyim. Web ve mobil uygulama geliştirme konularına ilgi duyuyor ve bu alanda projeler üretiyorum.</p>
+            <div class="buttons">
+                <a href="projeler.html" class="btn btn-primary">Projelerimi Gör</a>
+                <a href="iletisim.html" class="btn btn-outline">İletişime Geç</a>
             </div>
-        </section>
+        </div>
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Mete Muhammet Turan. Tüm hakları saklıdır.</p>
-            <p class="footer-subtext">Bu portfolyo İnternet Tabanlı Programlama dersi projesi kapsamında geliştirilmiştir.</p>
-        </div>
+        <p>&copy; 2026 Mete Muhammet Turan. Bu portfolyo İnternet Tabanlı Programlama dersi kapsamında geliştirilmiştir.</p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

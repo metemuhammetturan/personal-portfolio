@@ -4,82 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mete Muhammet Turan - İletişim</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar container">
-            <div class="logo">M.Turan</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="egitim.html">Eğitim & Yetkinlikler</a></li>
-                <li><a href="projeler.html">İş Geçmişi</a></li>
-                <li><a href="iletisim.html" style="color: var(--primary-color);">İletişim</a></li>
-                <li><button id="theme-toggle" class="theme-toggle" aria-label="Tema Değiştir">🌙</button></li>
-            </ul>
-        </nav>
+    
+    <header class="navbar">
+        <div class="logo">M.Turan</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="egitim.html">Eğitim & Deneyim</a></li>
+            <li><a href="projeler.html">Projeler & Yetkinlikler</a></li>
+            <li><a href="iletisim.html" class="active">İletişim</a></li>
+            <li><button id="theme-toggle" aria-label="Tema Değiştir">🌙</button></li>
+        </ul>
     </header>
 
-    <main style="min-height: calc(100vh - 160px); display: flex; align-items: center;">
-        <section class="section layout-contact reveal" style="width: 100%; border: none; background-color: transparent;">
-            <div class="container contact-wrapper">
-                <div class="contact-info">
-                    <h3 class="section-title">İletişim</h3>
-                    <p>Gerçek dünya problemlerine ölçeklenebilir çözümler üretmek ve yeni projelerde işbirliği yapmak için bana ulaşabilirsiniz. Start-up kültürü ve yenilikçi teknolojiler üzerine konuşmaktan her zaman keyif alırım.</p>
-                    <ul class="contact-details">
-                        <li>
-                            <span class="contact-icon">✉</span>
-                            <div class="contact-text">
-                                <strong>Email</strong>
-                                <span>metemhtturan@gmail.com</span>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="contact-icon">☎</span>
-                            <div class="contact-text">
-                                <strong>Telefon</strong>
-                                <span>+90 546 733 2339</span>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="contact-icon">in</span>
-                            <div class="contact-text">
-                                <strong>LinkedIn</strong>
-                                <a href="https://www.linkedin.com/in/mete-muhammet-turan-8b5abb246/" target="_blank" style="color: var(--primary-color);">@metemuhammetturan</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="contact-form-container">
-                    <form id="contactForm" class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Adınız Soyadınız</label>
-                            <input type="text" id="name" name="name" placeholder="John Doe" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">E-posta Adresiniz</label>
-                            <input type="email" id="email" name="email" placeholder="ornek@email.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Mesajınız</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Projenizden bahsedin..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">Mesaj Gönder</button>
-                    </form>
-                </div>
+    <main class="container">
+        <h2 class="title">İletişim</h2>
+        
+        <div class="contact-box">
+            <p>Benimle iletişime geçmek ve projelerim hakkında konuşmak için aşağıdaki bilgileri kullanabilir veya formu doldurabilirsiniz.</p>
+            <p><strong>E-posta:</strong> metemhtturan@gmail.com</p>
+            <p><strong>Telefon:</strong> +90 546 733 2339</p>
+        </div>
+
+        <!-- Sade ve Temiz İletişim Formu -->
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Adınız Soyadınız:</label>
+                <input type="text" id="name" required placeholder="John Doe">
             </div>
-        </section>
+            <div class="form-group">
+                <label for="email">E-posta Adresiniz:</label>
+                <input type="email" id="email" required placeholder="ornek@eposta.com">
+            </div>
+            <div class="form-group">
+                <label for="message">Mesajınız:</label>
+                <textarea id="message" rows="4" required placeholder="Mesajınızı yazın..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Mesaj Gönder</button>
+        </form>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Mete Muhammet Turan. Tüm hakları saklıdır.</p>
-            <p class="footer-subtext">Bu portfolyo İnternet Tabanlı Programlama dersi projesi kapsamında geliştirilmiştir.</p>
-        </div>
+        <p>&copy; 2026 Mete Muhammet Turan. Bu portfolyo İnternet Tabanlı Programlama dersi kapsamında geliştirilmiştir.</p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

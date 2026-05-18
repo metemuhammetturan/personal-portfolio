@@ -3,81 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mete Muhammet Turan - Projeler</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Mete Muhammet Turan - Projeler & Yetkinlikler</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar container">
-            <div class="logo">M.Turan</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="egitim.html">Eğitim & Yetkinlikler</a></li>
-                <li><a href="projeler.html" style="color: var(--primary-color);">İş Geçmişi</a></li>
-                <li><a href="iletisim.html">İletişim</a></li>
-                <li><button id="theme-toggle" class="theme-toggle" aria-label="Tema Değiştir">🌙</button></li>
-            </ul>
-        </nav>
+    
+    <header class="navbar">
+        <div class="logo">M.Turan</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="egitim.html">Eğitim & Deneyim</a></li>
+            <li><a href="projeler.html" class="active">Projeler & Yetkinlikler</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+            <li><button id="theme-toggle" aria-label="Tema Değiştir">🌙</button></li>
+        </ul>
     </header>
 
-    <main style="min-height: calc(100vh - 160px); display: flex; align-items: center;">
-        <section class="section layout-grid reveal" style="width: 100%;">
-            <div class="container">
-                <h3 class="section-title text-center">İş Geçmişi & Projeler</h3>
-                <div class="projects-wrapper">
-                    <article class="project-card reveal" style="transition-delay: 0.1s;">
-                        <div class="card-header brand-buyur">
-                            <h3>Buyur.co</h3>
-                            <span class="badge">Aktif Girişim</span>
-                        </div>
-                        <div class="card-content">
-                            <h4 class="role-title">Co-Founder & Backend Dev.</h4>
-                            <p>Oteller, restoranlar ve güzellik merkezlerinin çağrılarının yapay zeka (AI) tarafından karşılanmasını sağlayan SaaS platformu. Karmaşık backend mimarileri (NestJS, Microservices) ve AI entegrasyonları sıfırdan kurgulandı.</p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="https://www.buyur.co" target="_blank" class="project-link">Projeyi İncele &rarr;</a>
-                        </div>
-                    </article>
-                    <article class="project-card reveal" style="transition-delay: 0.2s;">
-                        <div class="card-header brand-yoldayim">
-                            <h3>Yoldayım</h3>
-                            <span class="badge">App Store & Play Store</span>
-                        </div>
-                        <div class="card-content">
-                            <h4 class="role-title">Founder & Fullstack Developer</h4>
-                            <p>Öğrenci taşımacılık sistemini dijitalleştiren platform. Fikir aşamasından pazar lansmanına kadar Flutter ve Node.js mimarisiyle uçtan uca geliştirildi. Bizzat operasyonel süreçleri de yönetildi.</p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="https://www.yoldayim.com" target="_blank" class="project-link">Projeyi İncele &rarr;</a>
-                        </div>
-                    </article>
-                    <article class="project-card reveal" style="transition-delay: 0.3s;">
-                        <div class="card-header brand-fintech">
-                            <h3>Fintech Ride Sharing</h3>
-                            <span class="badge">B2B Proje</span>
-                        </div>
-                        <div class="card-content">
-                            <h4 class="role-title">Backend Developer</h4>
-                            <p>Fintech tabanlı paylaşımlı yolculuk (ride-sharing) uygulaması. Yüksek güvenliğe sahip Node.js altyapısı, feature-based mimari ile finansal işlem akışları ve ödeme sağlayıcı entegrasyonları gerçekleştirildi.</p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="#" class="project-link">Projeyi İncele &rarr;</a>
-                        </div>
-                    </article>
-                </div>
+    <main class="container">
+        <h2 class="title">Projelerim</h2>
+        
+        <div class="grid">
+            <div class="card">
+                <h3>Buyur.co</h3>
+                <p>Oteller, restoranlar ve güzellik merkezleri için yapay zeka (AI) tabanlı sesli asistan ve randevu yönetim sistemi backend altyapısı.</p>
             </div>
-        </section>
+
+            <div class="card">
+                <h3>Yoldayım</h3>
+                <p>Öğrenci taşımacılık sistemlerini dijitalleştiren, servis konumlarını anlık takip eden ve operasyonel süreçleri yöneten mobil uygulama.</p>
+            </div>
+
+            <div class="card">
+                <h3>Fintech Ride Sharing</h3>
+                <p>Finansal işlem akışları ve güvenli ödeme sistemi entegrasyonuna sahip paylaşımlı yolculuk uygulaması backend projesi.</p>
+            </div>
+        </div>
+
+        <!-- Yetkinlikler (Skills) Bölümü -->
+        <h2 class="title" style="margin-top: 40px;">Yetkinlikler</h2>
+        <div class="skills-grid">
+            <span class="skill-badge">Node.js</span>
+            <span class="skill-badge">Nest.js</span>
+            <span class="skill-badge">Flutter</span>
+            <span class="skill-badge">MongoDB</span>
+            <span class="skill-badge">Redis</span>
+            <span class="skill-badge">Docker</span>
+            <span class="skill-badge">REST API</span>
+            <span class="skill-badge">Git / GitHub</span>
+            <span class="skill-badge">Figma</span>
+        </div>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Mete Muhammet Turan. Tüm hakları saklıdır.</p>
-            <p class="footer-subtext">Bu portfolyo İnternet Tabanlı Programlama dersi projesi kapsamında geliştirilmiştir.</p>
-        </div>
+        <p>&copy; 2026 Mete Muhammet Turan. Bu portfolyo İnternet Tabanlı Programlama dersi kapsamında geliştirilmiştir.</p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
