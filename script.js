@@ -1,118 +1,111 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // ==========================================
-    // 1. TEMA DEĞİŞTİRİCİ (Dark / Light Mode)
-    // ==========================================
+    // TEMA DEĞİŞTİRİCİ (Koyu / Açık Tema)
     const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
     
-    // Kullanıcının daha önceki tercihini kontrol et
-    if(localStorage.getItem('theme') === 'light') {
-        body.classList.add('light-theme');
-        if(themeToggle) themeToggle.textContent = '☀️';
+    // LocalStorage ile kaydedilen temayı kontrol et
+    if (localStorage.getItem('tema') === 'acik') {
+        document.body.classList.add('light-theme');
+        if (themeToggle) themeToggle.textContent = '☀️';
     } else {
-        if(themeToggle) themeToggle.textContent = '🌙';
+        if (themeToggle) themeToggle.textContent = '🌙';
     }
 
-    if(themeToggle) {
+    // Butona tıklanınca temayı değiştir
+    if (themeToggle) {
         themeToggle.addEventListener('click', () => {
-            body.classList.toggle('light-theme');
-            if(body.classList.contains('light-theme')) {
+            document.body.classList.toggle('light-theme');
+            
+            if (document.body.classList.contains('light-theme')) {
                 themeToggle.textContent = '☀️';
-                localStorage.setItem('theme', 'light');
+                localStorage.setItem('tema', 'acik'); // Açık temayı kaydet
             } else {
                 themeToggle.textContent = '🌙';
-                localStorage.setItem('theme', 'dark');
+                localStorage.setItem('tema', 'koyu'); // Koyu temayı kaydet
             }
         });
     }
 
-    // ==========================================
-    // 2. DAKTİLO (TYPEWRITER) EFEKTİ
-    // ==========================================
+    // DAKTİLO EFEKTİ (Yazı Yazma Animasyonu)
     const typewriterElement = document.querySelector('.typewriter');
-    if(typewriterElement) {
-        const words = ["Yazılım Mühendisi", "Girişimci", "Backend Developer", "Fullstack Developer"];
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        let typeSpeed = 100;
+    if (typewriterElement) {
+        const kelimeler = ["Yazılım Mühendisi", "Girişimci", "Backend Developer", "Fullstack Developer"];
+        let kelimeIndex = 0;
+        let harfIndex = 0;
+        let siliniyorMu = false;
 
-        function type() {
-            const currentWord = words[wordIndex];
+        function yaz() {
+            const aktifKelime = kelimeler[kelimeIndex];
             
-            if(isDeleting) {
-                typewriterElement.textContent = currentWord.substring(0, charIndex - 1);
-                charIndex--;
-                typeSpeed = 50; // Silerken daha hızlı
+            if (siliniyorMu) {
+                // Harf harf sil
+                typewriterElement.textContent = aktifKelime.substring(0, harfIndex - 1);
+                harfIndex--;
             } else {
-                typewriterElement.textContent = currentWord.substring(0, charIndex + 1);
-                charIndex++;
-                typeSpeed = 100; // Yazarken normal hız
+                // Harf harf yaz
+                typewriterElement.textContent = aktifKelime.substring(0, harfIndex + 1);
+                harfIndex++;
             }
 
-            // Kelime bittiğinde bekle ve silmeye başla
-            if(!isDeleting && charIndex === currentWord.length) {
-                typeSpeed = 1500; // Kelime sonu bekleme
-                isDeleting = true;
-            } else if(isDeleting && charIndex === 0) {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
-                typeSpeed = 500; // Yeni kelimeye başlamadan önce bekle
+            let yazmaHizi = 100;
+            if (siliniyorMu) {
+                yazmaHizi = 50;
             }
 
-            setTimeout(type, typeSpeed);
+            // Kelime tamamen yazıldıysa beklesin ve silmeye başlasın
+            if (!siliniyorMu && harfIndex === aktifKelime.length) {
+                yazmaHizi = 1500;
+                siliniyorMu = true;
+            } 
+            // Kelime tamamen silindiyse sonraki kelimeye geçsin
+            else if (siliniyorMu && harfIndex === 0) {
+                siliniyorMu = false;
+                kelimeIndex = (kelimeIndex + 1) % kelimeler.length; 
+                yazmaHizi = 500;
+            }
+
+            setTimeout(yaz, yazmaHizi);
         }
         
-        // Efekti başlat
-        setTimeout(type, 1000);
+        setTimeout(yaz, 1000);
     }
 
-    // ==========================================
-    // 3. SCROLL REVEAL (Aşağı Kaydırdıkça Çıkma)
-    // ==========================================
-    const reveals = document.querySelectorAll('.reveal');
-    
-    if('IntersectionObserver' in window) {
-        const revealObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target); // Sadece bir kere animasyon oynasın
-                }
-            });
-        }, {
-            threshold: 0.1, // Elementin %10'u göründüğünde tetikle
-            rootMargin: "0px 0px -50px 0px"
-        });
-
-        reveals.forEach(reveal => {
-            revealObserver.observe(reveal);
-        });
-    } else {
-        // Eski tarayıcılar için direkt görünür yap
-        reveals.forEach(reveal => reveal.classList.add('active'));
+    function scrollReveal() {
+        const elemanlar = document.querySelectorAll('.reveal');
+        
+        for (let i = 0; i < elemanlar.length; i++) {
+            const pencereYuksekligi = window.innerHeight;
+            const elemanUsteUzaklik = elemanlar[i].getBoundingClientRect().top;
+            const gorunmeSiniri = 100;
+            
+            if (elemanUsteUzaklik < pencereYuksekligi - gorunmeSiniri) {
+                elemanlar[i].classList.add('active');
+            }
+        }
     }
 
-    // ==========================================
-    // 4. İLETİŞİM FORMU (Basit Kontrol)
-    // ==========================================
+    // Sayfa yüklendiğinde ve kaydırıldığında fonksiyonu çalıştır
+    window.addEventListener('scroll', scrollReveal);
+    scrollReveal(); // Sayfa ilk açıldığında ekranda olanlar hemen gözüksün diye bir kez tetikliyoruz
+
+    // İLETİŞİM FORMU KONTROLÜ
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Sayfa yenilenmesini engelle
+            e.preventDefault(); // Sayfanın yenilenmesini engelle
             
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
+            const adSoyad = document.getElementById('name').value.trim();
+            const eposta = document.getElementById('email').value.trim();
+            const mesaj = document.getElementById('message').value.trim();
 
-            if (name === '' || email === '' || message === '') {
-                alert('Lütfen tüm alanları doldurunuz.');
+            // Boş alan kontrolü
+            if (adSoyad === '' || eposta === '' || mesaj === '') {
+                alert('Lütfen formdaki tüm alanları doldurun!');
                 return;
             }
 
-            alert(`Teşekkürler ${name}! Mesajınız başarıyla alınmıştır. Sunum için harika bir örnek!`);
-            contactForm.reset();
+            alert('Mesajınız başarıyla gönderildi! Teşekkürler.');
+            contactForm.reset(); // Formu temizle
         });
     }
 });
