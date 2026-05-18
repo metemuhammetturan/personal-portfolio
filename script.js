@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (document.body.classList.contains('light-theme')) {
                 temaButonu.textContent = '☀️';
-                localStorage.setItem('tema', 'acik'); // Hafızaya açık kaydet
+                localStorage.setItem('tema', 'acik');
             } else {
                 temaButonu.textContent = '🌙';
-                localStorage.setItem('tema', 'koyu'); // Hafızaya koyu kaydet
+                localStorage.setItem('tema', 'koyu');
             }
         });
     }
@@ -28,18 +28,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('contactForm');
     if (form) {
         form.addEventListener('submit', (e) => {
-            e.preventDefault(); // Sayfanın yenilenmesini engeller
+            e.preventDefault();
             
             const ad = document.getElementById('name').value.trim();
             const eposta = document.getElementById('email').value.trim();
             const mesaj = document.getElementById('message').value.trim();
 
-            // Basit boş alan kontrolü
             if (ad === '' || eposta === '' || mesaj === '') {
                 alert('Lütfen tüm alanları doldurun!');
             } else {
                 alert('Mesajınız başarıyla gönderildi!');
-                form.reset(); // Form kutularını temizler
+                form.reset();
             }
         });
     }
