@@ -239,7 +239,18 @@ body.light-theme .hero-content p {
     color: var(--text-color);
 }
 
-/* 9. FOOTER */
+/* 9. PROJE LİNKLERİ */
+.project-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.project-link:hover {
+    color: var(--primary-color);
+}
+
+/* 10. FOOTER */
 .footer {
     text-align: center;
     padding: 20px;
